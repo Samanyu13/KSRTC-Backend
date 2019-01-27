@@ -1,0 +1,23 @@
+{
+  "name": "ksrtc_employee",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.1",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1",
+    "passport": "^0.4.0",
+    "sequelize": "^4.39.0",
+    "stylus": "0.54.5"
+  }
+}
