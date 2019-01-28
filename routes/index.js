@@ -37,11 +37,12 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  const info = {};
+  let info = {};
 
-  info.password = req.body.data.password;
-  info.username = req.body.data.username;
+  info.password = req.body.password;
+  info.username = req.body.username;
 
+  
   methods.Employee.checkForEmployee(info)
     .then((model) => {
       res.json(model);

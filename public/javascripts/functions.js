@@ -27,12 +27,14 @@ function registerEmployee(){
 }
 
 function EmployeeLogin(){
+    console.log("pod")
+
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     var tosend = {};
     tosend.username = username;
     tosend.password = password;
-    axios.post('http://localhost:3000/login',{data:tosend})
+    axios.post('http://localhost:3000/login',tosend)
     .then(function(result){
         window.location.href = "../index.html"
     })
