@@ -42,7 +42,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 // Import Models such that I can use them in the api just by importing 'db'
-db.exams = require('./employee')(sequelize, Sequelize);
-db.exams = require('./employee_credentials')(sequelize, Sequelize);
+db.employees = require('./employee')(sequelize, Sequelize);
+db.employee_credentials = require('./employee_credentials')(sequelize, Sequelize);
 
 module.exports = db;

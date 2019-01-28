@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/register', (req, res) => {
   const info = {};
-  const final = {};
+  let final = {};
 
   var password = Math.random().toString(36).substr(2, 8);
   console.log(password);
@@ -22,6 +22,7 @@ router.post('/register', (req, res) => {
 
   final.public = req.body.data;
   final.private = info;
+  // final = req.body.data;
 
   methods.Employee.addEmployee(final)
     .then((model) => {
