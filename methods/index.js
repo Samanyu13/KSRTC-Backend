@@ -1,5 +1,5 @@
 const methods = {};
 
-methods.Employee = require('./employee');
+methods.Authentication = require('./authentication');
 
 module.exports = methods;

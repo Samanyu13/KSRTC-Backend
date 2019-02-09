@@ -1,11 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const Employee = sequelize
       .define('employee', {
-        id: {
-          type: DataTypes.INTEGER(),
-          primaryKey: true,
-          autoIncrement: true,
-        },
         username: {
           type: DataTypes.STRING(30),
           allowNull: false,
@@ -14,6 +9,7 @@ module.exports = function (sequelize, DataTypes) {
         employee_code: {
           type: DataTypes.STRING(20),
           allowNull: false,
+          primaryKey: true,
           unique: 'compositeIndex',
         },
         email: {

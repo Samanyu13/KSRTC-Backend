@@ -17,7 +17,7 @@ function registerEmployee(){
     tosend.city = city;
     tosend.state = state;
     tosend.pin = pin;
-    axios.post('http://localhost:3000/register',{data:tosend})
+    axios.post('http://localhost:3000/authentication/register',{tosend})
     .then(function(result){
         window.location.href = "index.html"
     })
@@ -27,16 +27,14 @@ function registerEmployee(){
 }
 
 function EmployeeLogin(){
-    console.log("pod")
-
-    var username = document.getElementById('username').value;
+    var employee_code = document.getElementById('employee_code').value;
     var password = document.getElementById('password').value;
     var tosend = {};
-    tosend.username = username;
+    tosend.employee_code = employee_code;
     tosend.password = password;
-    axios.post('http://localhost:3000/login',tosend)
+    axios.post('http://localhost:3000/authentication/login',tosend)
     .then(function(result){
-        window.location.href = "../index.html"
+        window.location.href = "index.html"
     })
     .catch(function(err){
         console.log(err)
