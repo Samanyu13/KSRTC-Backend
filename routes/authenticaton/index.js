@@ -7,21 +7,21 @@ router.post("/register", function(req, res) {
   var password = Math.random().toString(36).substr(2, 8);  
   console.log(password);
   let tosend = {};
-  tosend.username = req.body.data.username;
-  tosend.employee_code = req.body.data.employee_code;
-  tosend.email = req.body.data.email;
-  tosend.mobile_no = req.body.data.mobile_no;
-  tosend.address = req.body.data.address;
-  tosend.city = req.body.data.city;
-  tosend.state = req.body.data.state;
-  tosend.pin = req.body.data.pin;
+  tosend.username = req.body.username;
+  tosend.employee_code = req.body.employee_code;
+  tosend.email = req.body.email;
+  tosend.mobile_no = req.body.mobile_no;
+  tosend.address = req.body.address;
+  tosend.city = req.body.city;
+  tosend.state = req.body.state;
+  tosend.pin = req.body.pin;
   tosend.password = password;
   methods.Authentication.addEmployee(tosend)
     .then(function(result) {
       console.log("registration started result:"+result);
       if (result.success === true)
         return res.json({
-          success: true,
+          success: true,          
           status: result.status
         });
       else
@@ -53,7 +53,8 @@ router.post("/login", function(req, res) {
       if (result.success === true) {
         console.log("received token ");
         return res.json({
-          "success": true
+          "success": true,
+          jwt:result.token
         });
       } else {
         return res.json({

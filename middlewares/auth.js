@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken');
-var config = require('../../config');
+var config = require('../config/api.json');
 const secret = config.API_SECRET; //+ user's unique secret";
+var auth = {};
 
-function jwtVerifyToken(req, res, next)
+auth.jwtVerifyToken = function (req, res, next)
 {
   console.log(req.headers);
-  const token = req.body.token;
+  const token = req.headers['x-access-token'];
   if (!token)
   {
     console.log('no token');
@@ -21,9 +22,8 @@ function jwtVerifyToken(req, res, next)
 
     // if everything good, save to request for use in other routes
     console.log('everything good');
-    // req.userId = decoded.id;
     req.decoded = decoded;
     return next();
   });
 }
-module.exports = jwtVerifyToken;
+module.exports = auth;

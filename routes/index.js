@@ -7,6 +7,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.use('/authentication', require('./authenticaton'));
-router.use('/private'), require('./private');
+router.use('/private', require('./private'));
 
 module.exports = router;

@@ -1,36 +1,30 @@
 module.exports = function (sequelize, DataTypes) {
-    const BusLiveStatus = sequelize
-      .define('bus_live_status', {
+    const BusLog = sequelize
+      .define('bus_log', {
         bus_no: {
           type: DataTypes.STRING(10),
-          primaryKey: true,
-          
+          allowNull: false,          
         },
         reg_no: {
           type: DataTypes.STRING(12),
           allowNull: false,
-          unique: 'compositeIndex',
-
         },
         bus_make: {
           type: DataTypes.STRING(50),
           allowNull: false,
-          unique: 'compositeIndex',
         },
         employee_code: {
             type: DataTypes.STRING(10),
             allowNull: false,
-            unique: 'compositeIndex',
         },
           route_no: {
             type: DataTypes.STRING(10),
             allowNull: false,
-            unique: 'compositeIndex',
         },
       });
   
-      BusLiveStatus.associate = function (models) {
-          models.bus_live_status
+      BusLog.associate = function (models) {
+          models.bus_log
           .belongsTo(models.employee, {
             onDelete: 'CASCADE',
             
@@ -40,6 +34,5 @@ module.exports = function (sequelize, DataTypes) {
           });
       };
   
-    return BusLiveStatus;
+    return BusLog;
 };
-  
