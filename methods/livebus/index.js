@@ -45,7 +45,7 @@ BusLiveInfo.deleteRoute = info =>
   });
 
 
-  BusLiveInfo.findTheLiveBus = (info) => new Promise((resolve,reject) => {
+  BusLiveInfo.getLiveBus = (info) => new Promise((resolve,reject) => {
     models.bus_live_status
     .findOne({
       where: {
