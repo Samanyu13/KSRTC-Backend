@@ -24,10 +24,13 @@ Authentication.addEmployee = function(info) {
           people.state = info.state;
           people.pin = info.pin;
 
+          console.log("SOMANMASS")
           return models.employees
             .create(people, { transaction: t })
             .then(function(peeps) {
               var login_credentials = {};
+              console.log("SOMANMASS"+info.employee_code)
+
               login_credentials.employee_code = info.employee_code;
               login_credentials.password = hash;
               return models.employee_credentials
