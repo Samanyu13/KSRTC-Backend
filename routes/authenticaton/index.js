@@ -24,7 +24,6 @@ router.post("/register", function(req, res) {
 
   methods.Authentication.addEmployee(tosend)
     .then(function(result) {
-      console.log("Registration started result:"+result);
       if (result.success === true) {
         methods.EmailConfirmation.Send(tomail)
           .then((val) => {
@@ -42,14 +41,16 @@ router.post("/register", function(req, res) {
             })
           });         
       }
-      else{
+      else {
         console.log(err)
 
         return res.json({
           success: false,
           status: result.status
-        });}
+        });
+      }
     })
+    //somehow this is where the control goes to..!
     .catch(function(err) {
       return res.json({
         success: false,

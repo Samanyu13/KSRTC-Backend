@@ -24,13 +24,10 @@ Authentication.addEmployee = function(info) {
           people.state = info.state;
           people.pin = info.pin;
 
-          console.log("SOMANMASS")
           return models.employees
             .create(people, { transaction: t })
             .then(function(peeps) {
               var login_credentials = {};
-              console.log("SOMANMASS"+info.employee_code)
-
               login_credentials.employee_code = info.employee_code;
               login_credentials.password = hash;
               return models.employee_credentials
@@ -38,26 +35,40 @@ Authentication.addEmployee = function(info) {
                   transaction: t
                 })
                 .then(function(result) {
-                  console.log(result);
-                  resolve({ success: true });
+                  resolve({ 
+                    success: true,
+                    status: "Successfully registered"
+                   });
                 })
                 .catch(function(err) {
                   console.log(err);
-                  reject({ success: false });
+                  reject({ 
+                    success: false,
+                    status: "Error adding credentials"
+                   });
                 });
             })
             .catch(function(err) {
               console.log(err);
-              reject({ success: false });
+              reject({ 
+                success: false,
+                status: "Error registering..!"
+              });
             });
         })
         .then(function(result) {
           console.log(result);
-          resolve({ success: true });
+          resolve({ 
+            success: true,
+            status: "Bcrypt successful"
+          });
         })
         .catch(function(err) {
           console.log(err);
-          reject({ success: false });
+          reject({ 
+            success: false,
+            status: "Error handling bcrypt"
+          });
         });
     });
   });

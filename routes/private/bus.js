@@ -42,6 +42,7 @@ router.post('/end' , auth.jwtVerifyToken , function(req,res) {
       methods.BusLogInfo.addRoute(result)
       .then((data)=>{
         res.json({
+          success: true,
           status:data
         })
       })

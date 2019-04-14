@@ -35,7 +35,7 @@ function getOAuth2Client(info, cb) {
 
     var email_lines = [];
 
-    email_lines.push('From: "KSRTC" <padinju@gmail.com>');
+    email_lines.push('From: "KSRTC" <mybusksrtc2019@gmail.com>');
     email_lines.push('To: '+info.email);
     email_lines.push('Content-type: text/html;charset=iso-8859-1');
     email_lines.push('MIME-Version: 1.0');
