@@ -27,15 +27,14 @@ router.post("/register", function(req, res) {
       if (result.success === true) {
         methods.EmailConfirmation.Send(tomail)
           .then((val) => {
-            console.log("sasibalh"+val);
-            res.json({
-              success: true,
-              status: val
+            console.log("sasibalh"+JSON.stringify(val)) ;
+            return res.json({
+              success: true
             })  
           })
           .catch((err) => {
             console.log(err)
-            res.json({
+            return res.json({
               success: false,
               status: err
             })
@@ -50,7 +49,6 @@ router.post("/register", function(req, res) {
         });
       }
     })
-    //somehow this is where the control goes to..!
     .catch(function(err) {
       return res.json({
         success: false,

@@ -58,32 +58,9 @@ function getOAuth2Client(info, cb) {
     }, cb);
   }
 
-  // EmailConfirmation.Send = function(info) {
-  //   return new Promise(function(resolve, reject) {
-  //     getOAuth2Client(info, function(err, info, oauth2Client) {
-  //       if (err) {
-  //         console.log('err:', err);
-  //         reject(err);
-  //       } 
-  //       else {
-  //         sendSampleMail(info, oauth2Client, function(err, results) {
-  //           if (err) {
-  //             console.log(' err:', err);
-  //             reject(err);
-  //           } 
-  //           else {
-  //             console.log(results);
-  //             resolve(results);
-  //           }
-  //         });
-  //       }
-  //     });
-  //   });
-  // };
 
-EmailConfirmation.Send = function(info){
-  console.log(__dirname);
-  getOAuth2Client(info, function(err, info, oauth2Client) {
+EmailConfirmation.Send = async function(info){
+  await getOAuth2Client(info, function(err, info, oauth2Client) {
     if (err) {
       console.log('err:', err);
     } else {
@@ -91,7 +68,8 @@ EmailConfirmation.Send = function(info){
         if (err) {
           console.log('err:', err);
         } else {
-          console.log(results);
+          console.log(results.status);  
+          return 200;        
         }
       });
     }
