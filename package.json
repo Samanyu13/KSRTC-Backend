@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
-    "sqlite3":"^4.0.6",
     "bcrypt": "^3.0.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -21,7 +20,7 @@
     "mysql2": "^1.6.1",
     "opn": "^5.4.0",
     "passport": "^0.4.0",
-    "sequelize": "^4.39.0",
+    "sequelize": "^4.43.1",
     "server-destroy": "^1.0.1",
     "stylus": "0.54.5"
   }

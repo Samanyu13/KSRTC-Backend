@@ -35,26 +35,40 @@ Authentication.addEmployee = function(info) {
                   transaction: t
                 })
                 .then(function(result) {
-                  console.log(result);
-                  resolve({ success: true });
+                  resolve({ 
+                    success: true,
+                    status: "Successfully registered"
+                   });
                 })
                 .catch(function(err) {
                   console.log(err);
-                  reject({ success: false });
+                  reject({ 
+                    success: false,
+                    status: "Error adding credentials"
+                   });
                 });
             })
             .catch(function(err) {
               console.log(err);
-              reject({ success: false });
+              reject({ 
+                success: false,
+                status: "Error registering..!"
+              });
             });
         })
         .then(function(result) {
           console.log(result);
-          resolve({ success: true });
+          resolve({ 
+            success: true,
+            status: "Bcrypt successful"
+          });
         })
         .catch(function(err) {
           console.log(err);
-          reject({ success: false });
+          reject({ 
+            success: false,
+            status: "Error handling bcrypt"
+          });
         });
     });
   });

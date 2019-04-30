@@ -20,7 +20,7 @@ app.use('/', routes);
 // app.use(passport.session());
 
 
-var port = 4000;
+var port = 3000;
 app.set('port', port);
 
 var db = require('./models');

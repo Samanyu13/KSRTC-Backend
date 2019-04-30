@@ -24,31 +24,30 @@ router.post("/register", function(req, res) {
 
   methods.Authentication.addEmployee(tosend)
     .then(function(result) {
-      console.log("Registration started result:"+result);
       if (result.success === true) {
         methods.EmailConfirmation.Send(tomail)
           .then((val) => {
-            console.log("sasibalh"+val);
-            res.json({
-              success: true,
-              status: val
+            console.log("sasibalh"+JSON.stringify(val)) ;
+            return res.json({
+              success: true
             })  
           })
           .catch((err) => {
             console.log(err)
-            res.json({
+            return res.json({
               success: false,
               status: err
             })
           });         
       }
-      else{
+      else {
         console.log(err)
 
         return res.json({
           success: false,
           status: result.status
-        });}
+        });
+      }
     })
     .catch(function(err) {
       return res.json({
