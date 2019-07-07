@@ -4,8 +4,9 @@ const methods = require("../../methods");
 
 //public/db_entry/busStopMaster
 router.post('/busStopMaster', function(req, res) {
-    methods.RouteDBEntry.addBusMaster()
+    methods.DBEntry.addBusMaster()
     .then(model => {
+        console.log(model);
         return res.json({
             'success': true
         });
@@ -20,7 +21,7 @@ router.post('/busStopMaster', function(req, res) {
 
 //public/db_entry/routeMaster
 router.post('/routeMaster', function(req, res) {
-    methods.RouteDBEntry.addRouteMaster()
+    methods.DBEntry.addRouteMaster()
     .then(model => {
         return res.json({
             'success': true
@@ -36,7 +37,7 @@ router.post('/routeMaster', function(req, res) {
 
 //public/db_entry/routeDetails
 router.post('/routeDetails', function(req, res) {
-    methods.RouteDBEntry.addRouteDetails()
+    methods.DBEntry.addRouteDetails()
     .then(model => {
         return res.json({
             'success': true

@@ -12,15 +12,15 @@ module.exports = function (sequelize, DataTypes) {
         },
     });
 
-    // BusstopMaster.associate = function(models) {
-    //   models.busstop_master
-    //   .hasMany(models.route_details, {
-    //       onDelete: 'CASCADE',
-    //       foreignKey: {
-    //           name: 'busstop_id'
-    //       }
-    //   });
-    // };
+    BusstopMaster.associate = function(models) {
+      models.busstop_master
+      .hasMany(models.route_details, {
+          onDelete: 'CASCADE',
+          foreignKey: {
+              name: 'busstop_id'
+          }
+      });
+    };
   
     return BusstopMaster;
 };

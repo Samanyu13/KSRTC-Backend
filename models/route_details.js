@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
     };
 
     RouteDetails.associate = function (models) {
-        models.routes.route_details
+        models.route_details
         .belongsTo(models.busstop_master, {
           onDelete: 'CASCADE',
           

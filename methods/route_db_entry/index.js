@@ -9,10 +9,10 @@ const path_routeMaster = __dirname + '/sheets/route_master.csv';
 const path_routeDetails = __dirname + '/sheets/route_details.csv';
 // const path_routeDirection = __dirname + '/sheets/route_direction.csv';
 
-var RouteDBEntry = {};
+var DBEntry = {};
 
-RouteDBEntry.addBusMaster = function() {
-    return new Promise(function(resole, reject) {
+DBEntry.addBusMaster = function() {
+    return new Promise(function(resolve, reject) {
         const obj = [];
 
         fs.createReadStream(path_busMaster)
@@ -24,6 +24,7 @@ RouteDBEntry.addBusMaster = function() {
                 models.busstop_master
                 .create(obj[i])
                 .then(model => {
+                    console.log(model+i);
                     ;
                 })
                 .catch(err => {
@@ -41,8 +42,8 @@ RouteDBEntry.addBusMaster = function() {
     });
 };
 
-RouteDBEntry.addRouteMaster = function() {
-    return new Promise(function(resole, reject) {
+DBEntry.addRouteMaster = function() {
+    return new Promise(function(resolve, reject) {
         const obj = [];
 
         fs.createReadStream(path_routeMaster)
@@ -71,8 +72,8 @@ RouteDBEntry.addRouteMaster = function() {
     });
 };
 
-RouteDBEntry.addRouteDetails = function() {
-    return new Promise(function(resole, reject) {
+DBEntry.addRouteDetails = function() {
+    return new Promise(function(resolve, reject) {
         const obj = [];
 
         fs.createReadStream(path_routeDetails)
@@ -101,4 +102,4 @@ RouteDBEntry.addRouteDetails = function() {
     });
 };
 
-module.exports = RouteDBEntry;
+module.exports = DBEntry;
