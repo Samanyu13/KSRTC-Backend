@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
           allowNull: false,
         },
         busstop_id: {
-            type: DataTypes.INTEGER(40),
+            type: DataTypes.STRING(40),
             allowNull: false,          
         },
         distance: {
@@ -24,11 +24,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
         },
         longitude: {
-            type: DataTypes.INTEGER(10),
+            type: DataTypes.STRING(10),
             allowNull: false,          
         },
     });
-
     RouteDetails.associate = function (models) {
         models.route_details
         .belongsTo(models.route_master, {
@@ -41,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
     };
 
     RouteDetails.associate = function (models) {
-        models.route_details
+        models.routes.route_details
         .belongsTo(models.busstop_master, {
           onDelete: 'CASCADE',
           

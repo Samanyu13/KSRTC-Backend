@@ -2,6 +2,6 @@
 const express = require("express");
 const router = express.Router();
 
-router.use('/all_routes', require('./all_routes'));
+router.use('/db_entry', require('./db_entry'));
 
 module.exports = router;
