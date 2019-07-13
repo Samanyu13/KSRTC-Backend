@@ -63,7 +63,7 @@ BusLiveInfo.getLiveBus = (info) => new Promise((resolve,reject) => {
 
 BusLiveInfo.getAllRouteIDs = function() {
   return new Promise(function(resolve, reject) {
-    models.findAll()
+    models.bus_live_status.findAll()
     .then(model => {
       if(model.length == 0) {
         resolve({
@@ -86,5 +86,25 @@ BusLiveInfo.getAllRouteIDs = function() {
     });
   });
 };
+
+BusLiveInfo.returnAllRouteIDs = function(info) {
+  return new Promise(function(resolve, reject) {
+    models.bus_live_status.findAll({
+      attributes: ['route_no']
+    })
+    .then(model => {
+      resolve({
+        'success': true,
+        'data': model
+      });
+    })
+    .catch(err => {
+      reject({
+        'success': false,
+        'err': err
+      });
+    })
+  })
+}
 
 module.exports = BusLiveInfo;

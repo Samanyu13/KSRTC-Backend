@@ -27,7 +27,7 @@ router.post("/register", function(req, res) {
       if (result.success === true) {
         methods.EmailConfirmation.Send(tomail)
           .then((val) => {
-            console.log("sasibalh"+JSON.stringify(val)) ;
+            console.log(JSON.stringify(val)) ;
             return res.json({
               success: true
             })  

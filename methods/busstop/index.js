@@ -14,7 +14,7 @@ BusStop.getStopIDByName = function(info) {
             console.log(model);
             resolve({
                 'success': true,
-                'data': model
+                'data': model.busstop_id
             });
         })
         .catch(err => {

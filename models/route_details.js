@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
     const RouteDetails = sequelize
     .define('route_details', {
         id: {
-          type: DataTypes.STRING(10),
+          type: DataTypes.INTEGER(10),
           allowNull: false,  
           primaryKey: true,        
         },
