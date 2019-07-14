@@ -45,20 +45,66 @@ BusLiveInfo.deleteRoute = info =>
   });
 
 
-  BusLiveInfo.getLiveBus = (info) => new Promise((resolve,reject) => {
-    models.bus_live_status
-    .findOne({
-      where: {
-        bus_no: info.bus_no 
-        },raw:true
-      })
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((err) => {
-        console.log(err);
-        reject(err);
-      });
+BusLiveInfo.getLiveBus = (info) => new Promise((resolve,reject) => {
+  models.bus_live_status
+  .findOne({
+    where: {
+      bus_no: info.bus_no 
+    },raw:true
+  })
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((err) => {
+    console.log(err);
+    reject(err);
   });
+});
+
+BusLiveInfo.getAllRouteIDs = function() {
+  return new Promise(function(resolve, reject) {
+    models.bus_live_status.findAll()
+    .then(model => {
+      if(model.length == 0) {
+        resolve({
+          'success': false,
+          'data': "No live buses..!"
+        });
+      }
+      else {
+        resolve({
+          'success': true,
+          'data': model
+        });
+      }
+    })
+    .catch(err => {
+      reject({
+        'success': false,
+        'err': err
+      });
+    });
+  });
+};
+
+BusLiveInfo.returnAllRouteIDs = function(info) {
+  return new Promise(function(resolve, reject) {
+    models.bus_live_status.findAll({
+      attributes: ['route_no']
+    })
+    .then(model => {
+      resolve({
+        'success': true,
+        'data': model
+      });
+    })
+    .catch(err => {
+      reject({
+        'success': false,
+        'err': err
+      });
+    })
+  })
+}
 
 module.exports = BusLiveInfo;

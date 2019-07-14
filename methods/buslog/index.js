@@ -1,8 +1,6 @@
-const jwt = require("jsonwebtoken");
 const models = require("../../models");
 const Promise = require("bluebird");
 const { sequelize } = require("../../models");
-const key = require("../../config/api.json").API_SECRET;
 var BusLogInfo = {};
 
 
