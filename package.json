@@ -22,11 +22,7 @@
     "mysql2": "^1.6.5",
     "opn": "^5.5.0",
     "passport": "^0.4.0",
-<<<<<<< HEAD
-    "sequelize": "^4.43.1",
-=======
     "sequelize": "^4.44.0",
->>>>>>> dd22f44ec465d84760ca0646356c0d9b8142d941
     "server-destroy": "^1.0.1",
     "sqlite3": "^4.0.6",
     "stylus": "0.54.5"
