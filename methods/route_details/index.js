@@ -2,7 +2,7 @@ const models = require("../../models");
 const Promise = require("bluebird");
 const csv = require('csv-parser');
 const fs = require('fs');
-
+const Op = require('sequelize').Op
 var RouteDetails = {};
 
 RouteDetails.returnAllTheRoutes = function(info) {
@@ -73,43 +73,43 @@ RouteDetails.returnInfoOfRouteIDs = function(info) {
             }
         })
         .then(model_route => {
-
-
-
-
-
+            let ids = []
             for(let i=info.range.start; i<=info.range.end; i++) {
-                models.route_details.findOne({
+                ids.push(i);
+            }
+                models.route_details.findAll({
                     where: {
-                        id: i,
+                        id: {
+                            [Op.or]: ids
+                        },
                         route_id: info.route_id
                     },
                     attributes: ['busstop_id', 'distance']
                 })
                 .then(model_details => {
-
-        //   console.log(JSON.stringify(model_details)+"qwertyuytrewadfgh");
-          
-
-                    if(i != info.range.start) {
-                        distance += model_details.distance;
+                    let busstop_ids = [];
+                    for(let i = 0;i<model_details.length;i++){
+                        distance += model_details[i].distance;
+                        busstop_ids.push(model_details[i].busstop_id)
+                    
                     }
-
-                    models.busstop_master.findOne({
+                    models.busstop_master.findAll({
                         where: {
-                            busstop_id: model_details.busstop_id
+                            busstop_id: busstop_ids
                         },
                         attributes: ['busstop']
                     })
                     .then(model_bus => {
-
-                        busstops.push(model_bus.busstop);
+                        for(let i = 0;i<model_bus.length;i++)
+                            busstops.push(model_bus[i].busstop);
+                        load.route_name = model_route.route_name;
+                        load.route_id = model_route.route_id;
                         load.distance = distance;
                         load.busstops = busstops;
-
-            // console.log(JSON.stringify(busstops)+"qwertyuytrewadfgh");
-            // console.log(distance+"qwertyuytrewadfgh");
-
+                        resolve({
+                            'success': true,
+                            'data': load
+                        });
                     })
                     .catch(err => {
                         reject({
@@ -117,6 +117,7 @@ RouteDetails.returnInfoOfRouteIDs = function(info) {
                             'err': err
                         });
                     });
+
                 })
                 .catch(err => {
                     reject({
@@ -125,28 +126,15 @@ RouteDetails.returnInfoOfRouteIDs = function(info) {
                     }); 
                 });
 
-            }
-
-            load.route_name = model_route.route_name;
-            load.route_id = model_route.route_id;
-
-            load.distance = distance;
-            load.busstops = busstops;
-
-            console.log(JSON.stringify(load)+"qwertyuytrewadfgh");
-
-
-            resolve({
-                'success': true,
-                'data': load
-            });
+            
+          
         })
-        .catch(err => {
-            reject({
-                'success': false,
-                'err': err
-            });
-        });
+        // .catch(err => {
+        //     reject({
+        //         'success': false,
+        //         'err': err
+        //     });
+        // });
     });
 };
 

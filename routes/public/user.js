@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const methods = require("../../methods");
 
+
+
 // public/user/returnBusDetails
 router.post('/returnBusDetails', function(req, res) {
   const from = req.body.from;
@@ -49,31 +51,53 @@ router.post('/returnBusDetails', function(req, res) {
             }
           }
           
-          // console.log(JSON.stringify(final_routes)+"qwertyuytrewadfgh");
 
-
-          var final_details = [];
           //fetching details of all the filtered routes
-          for(let i=0; i<final_routes.length; i++) {
-            var datum = {};
-            datum.route_id = final_routes[i];
-            datum.range = final_range[i];
-            methods.RouteDetails.returnInfoOfRouteIDs(datum)
-            .then(final_model => {
-              final_details.push(final_model);
+          function returnDetailsofID(datum){
+            return methods.RouteDetails.returnInfoOfRouteIDs(datum)
+            .then(function(final_model){
+              return {"success":true,"data":final_model.data};
+         
             })
             .catch(err => {
-              return res.json({
-                'success': false,
-                'err': "method returnInfoOfRouteIDs"
-              });
+              return {"success":false,"data":[]}
             });
+            
+          }
+           function wait() {
+            var final_details = [];
+            return new Promise(async function(resolve,reject){
+              for(let i=0; i<final_routes.length; i++) {
+                var datum = {};
+                datum.route_id = final_routes[i];
+                datum.range = final_range[i];
+                var x = await returnDetailsofID(datum);
+                if(x.success)
+                  final_details.push(x);
+                else
+                  reject({"success":false,"data":[]})
+              }
+              resolve({"success":true,"data":final_details});
+            })
+         
+          
           }
 
-          return res.json({
-            'success': true,
-            'data': final_details
-          });
+          async function billan() {
+            soman = await wait();
+            if(soman.success)
+              return res.json({
+                'success': true,
+                'data': soman.data
+              });
+            else
+              return res.json({
+                'success':false,
+                'data':[]
+              })
+          }
+
+          billan();
         })
         .catch(err => {
           return res.json({
