@@ -129,12 +129,12 @@ RouteDetails.returnInfoOfRouteIDs = function(info) {
             
           
         })
-        // .catch(err => {
-        //     reject({
-        //         'success': false,
-        //         'err': err
-        //     });
-        // });
+        .catch(err => {
+            reject({
+                'success': false,
+                'err': err
+            });
+        });
     });
 };
 

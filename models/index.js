@@ -20,6 +20,7 @@ fs
   })
   .forEach((file) => {
     const model = sequelize['import'](path.join(__dirname, file));
+
     db[model.name] = model;
   });
 
@@ -47,7 +48,5 @@ db.employee_credentials = require('./employee_credentials')(sequelize, Sequelize
 db.busstop_master = require('./busstop_master')(sequelize, Sequelize);
 db.route_master = require('./routes/route_master')(sequelize, Sequelize);
 db.route_details = require('./route_details')(sequelize, Sequelize);
-// db.route_direction = require('./route_direction')(sequelize, Sequelize);
-// db.all_routes = require('./all_routes')(sequelize, Sequelize);
 
 module.exports = db;

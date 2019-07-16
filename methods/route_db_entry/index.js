@@ -7,7 +7,6 @@ const fs = require('fs');
 const path_busMaster = __dirname + '/sheets/busstop_master.csv';
 const path_routeMaster = __dirname + '/sheets/route_master.csv';
 const path_routeDetails = __dirname + '/sheets/route_details.csv';
-// const path_routeDirection = __dirname + '/sheets/route_direction.csv';
 
 var DBEntry = {};
 
