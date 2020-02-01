@@ -1,1 +1,1 @@
-# ksrtc_employee_app
+# A model backend framework for KSRTC passenger and employee apps.
