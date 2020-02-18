@@ -1,76 +1,76 @@
 route_id,route_name
-0101-40, Tvm City-Vettukadu (Via_Valiyathura)
-0101-02, Tvm City-Vizhinjam_Via Ambalathara
+0101-40,Tvm City - Vettukadu (via Valiyathura)
+0101-02,Tvm City - Vizhinjam(via Ambalathara)
 0101-03,Tvm City - Kattakada 
-0101-04,Tvm City - Kizhoor (Via Thiruvallam)
+0101-04,Tvm City - Kizhoor(via Thiruvallam)
 0101-05,Tvm City - Konjira Vembayam 
 0101-06,Tvm City - Kuttiyani 
 0101-07,Tvm City - Maruthoorkadavu 
-0101-08,Tvm City - Maruthoorkadavu (Via Karamana) 
-0101-09,Tvm City - Paruthikuzhi(Via Mukkola) 
-0101-10,Tvm City - Paruthikuzhi(Via-Balvan Nagar) 
+0101-08,Tvm City - Maruthoorkadavu(via Karamana) 
+0101-09,Tvm City - Paruthikuzhi(via Mukkola) 
+0101-10,Tvm City - Paruthikuzhi(via Balvan Nagar) 
 0101-11,Tvm City - Peringamala
 0101-12,Tvm City - Poonthura 
-0101-13,Tvm City - Poudikonam(Via Mannathala)
+0101-13,Tvm City - Poudikonam(via Mannathala)
 0101-14,Tvm City – PT Nagar 
 0101-15,Tvm City - Puliyarakonam 
-0101-16,Tvm City - Punchakari(Via Vandithadam) 
-0101-17,Tvm City – Punchakkari (Via Menilam) 
-0101-18,Tvm City - Punchakkari(Via Pappanchani)
-0101-19,Tvm City - Ramapuram(Via Venganoor)
+0101-16,Tvm City - Punchakari(via Vandithadam) 
+0101-17,Tvm City – Punchakkari(via Menilam) 
+0101-18,Tvm City - Punchakkari(via Pappanchani)
+0101-19,Tvm City - Ramapuram(via Venganoor)
 0101-20,Tvm City - Veli 
-0101-21,Tvm City - Venganoor (Via Thiruvallam)
+0101-21,Tvm City - Venganoor(via Thiruvallam)
 0101-22,Tvm City - Vettukadu
-0101-23,Tvm City-Azhimala
-0101-24,Tvm City-Beemapalli
-0101-25,Tvm City-Chiramukku 
-0101-26,Tvm City-Irinjayam
-0101-27,Tvm City-Kairali Nagar
-0101-28,Tvm City-Kaliyikkavila 
-0101-29,Tvm City-Kalladi _South (Via Homeo Medical Collage)
-0101-30,Tvm City-Kaniyapuram
-0101-31,Tvm City-Kannamoola Kariyam Kesavdasapuram
-0101-32,Tvm City-Karikkam
-0101-33,Tvm City-Kovalam 
-0101-34,Tvm City-Moonnamkuzhi 
-0101-35,Tvm City-Oruvathilkotta 
-0101-36,Tvm City-Puthenthope
-0101-37,Tvm City-Thiruvallam
-0101-38,Tvm City-Venjaramoodu
-0102-01,Vizhinjam_Via Ambalathara -TvmCity
-0140-01,Vettukadu (Via_Valiyathura) -TvmCity
-0122-01,Vettukadu -TvmCity
-0138-01,Venjaramoodu -TvmCity
-0121-01,Venganoor (Via Thiruvallam)
-0120-01, Veli  -TvmCity
-0119-01,Ramapuram(Via Venganoor) -TvmCity
-0136-01,Puthenthoppu -TvmCity
-0117-01,Punchakkari (Via Menilam) -TvmCity
-0115-01,Puliyarakonam -TvmCity
-0114-01,PT Nagar -TvmCity
-0113-01,Poudikonam(Via Mannathala) -TvmCity
-0112-01,Poonthura -TvmCity
-0111-01,Peringamala -TvmCity
-0110-01,Paruthikuzhi(Via-Balvan Nagar) -TvmCity
-0109-01,Paruthikuzhi(Via Mukkola) -TvmCity
-0135-01,Oruvathilkotta -TvmCity
-0134-01,Moonnamkuzhi -TvmCity
-0108-01,Maruthoorkadavu (Via Karamana) -TvmCity
-0107-01,Maruthoorkadavu -TvmCity
-0106-01,Kuttiyani  -TvmCity
-0133-01,Kovalam -TvmCity
-0105-01,Konjira Vembayam -TvmCity
-1004-01,Kizhoor (Via Thiruvallam) -TvmCity
-0103-01,Kattakada -TvmCity
-0132-01,Karikkam -TvmCity
-0131-01,Kannamoola Kariyam Kesavdasapuram -TvmCity
-0130-01,Kaniyapuram -TvmCity
-0129-01,Kalladi _South  -TvmCity
-0128-01,Kaliyikkavila -TvmCity
-0127-01,Kairali Nagar -TvmCity
-0126-01,Irinjayam -TvmCity
-0125-01,Chiramukku -TvmCity
-0124-01,Beemapalli -TvmCity
-0123-01,Azhimala -TvmCity
-0118-01, Punchakkari(Via Pappanchani) -TvmCity
-0116-01, Punchakari(Via Vandithadam) -TvmCity
+0101-23,Tvm City - Azhimala
+0101-24,Tvm City - Beemapalli
+0101-25,Tvm City - Chiramukku 
+0101-26,Tvm City - Irinjayam
+0101-27,Tvm City - Kairali Nagar
+0101-28,Tvm City - Kaliyikkavila 
+0101-29,Tvm City - Kalladi South(via Homeo Medical Collage)
+0101-30,Tvm City - Kaniyapuram
+0101-31,Tvm City - Kannamoola Kariyam Kesavdasapuram
+0101-32,Tvm City - Karikkam
+0101-33,Tvm City - Kovalam 
+0101-34,Tvm City - Moonnamkuzhi 
+0101-35,Tvm City - Oruvathilkotta 
+0101-36,Tvm City - Puthenthope
+0101-37,Tvm City - Thiruvallam
+0101-38,Tvm City - Venjaramoodu
+0102-01,Vizhinjam(via Ambalathara) - Tvm City
+0140-01,Vettukadu(via Valiyathura) - Tvm City
+0122-01,Vettukadu - Tvm City
+0138-01,Venjaramoodu - Tvm City
+0121-01,Venganoor(via Thiruvallam) - Tvm City
+0120-01,Veli - Tvm City
+0119-01,Ramapuram(via Venganoor) - Tvm City
+0136-01,Puthenthoppu - Tvm City
+0117-01,Punchakkari(via Menilam) - Tvm City
+0115-01,Puliyarakonam - Tvm City
+0114-01,PT Nagar - Tvm City
+0113-01,Poudikonam(via Mannathala) - Tvm City
+0112-01,Poonthura - Tvm City
+0111-01,Peringamala - Tvm City
+0110-01,Paruthikuzhi(via Balvan Nagar) - Tvm City
+0109-01,Paruthikuzhi(via Mukkola) - Tvm City
+0135-01,Oruvathilkotta - Tvm City
+0134-01,Moonnamkuzhi - Tvm City
+0108-01,Maruthoorkadavu(via Karamana) - Tvm City
+0107-01,Maruthoorkadavu - Tvm City
+0106-01,Kuttiyani  - Tvm City
+0133-01,Kovalam - Tvm City
+0105-01,Konjira Vembayam - Tvm City
+1004-01,Kizhoor(via Thiruvallam) - Tvm City
+0103-01,Kattakada - Tvm City
+0132-01,Karikkam - Tvm City
+0131-01,Kannamoola Kariyam Kesavdasapuram - Tvm City
+0130-01,Kaniyapuram - Tvm City
+0129-01,Kalladi South  - Tvm City
+0128-01,Kaliyikkavila - Tvm City
+0127-01,Kairali Nagar - Tvm City
+0126-01,Irinjayam - Tvm City
+0125-01,Chiramukku - Tvm City
+0124-01,Beemapalli - Tvm City
+0123-01,Azhimala - Tvm City
+0118-01,Punchakkari(via Pappanchani) - Tvm City
+0116-01,Punchakari(via Vandithadam) - Tvm City

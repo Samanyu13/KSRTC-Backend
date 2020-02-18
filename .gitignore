@@ -3,3 +3,6 @@ config/
 0.0.0.0
 shrinkwrap.yaml
 .glitch-assets
+methods/route_db_entry/sheets/busstop_master.csv
+methods/route_db_entry/sheets/route_details.csv
+methods/route_db_entry/sheets/route_master.csv
