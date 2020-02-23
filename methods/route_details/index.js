@@ -1,7 +1,5 @@
 const models = require("../../models");
 const Promise = require("bluebird");
-const csv = require('csv-parser');
-const fs = require('fs');
 const Op = require('sequelize').Op
 var RouteDetails = {};
 

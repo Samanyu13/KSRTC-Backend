@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
 const models = require("../../models");
-const methods = require("../../methods/authentication");
 const Promise = require("bluebird");
 const { sequelize } = require("../../models");
 const key = require("../../config/api.json").API_SECRET;
